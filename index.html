@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    	<title>Metronome</title>
+		<script type="text/javascript" src="./js/Tone.js"></script>
+    	<script type="text/javascript" src="./js/app.js"></script>
+		<!--<link rel="stylesheet" href="stylesheet.css" type="text/css">-->
+	</head>
+	<body>
+  		<h1>Metronome</h1>
+  		<input type = "range" min = "30" max = "200" value="120" step="2" onchange = "displayBPM(this.value)"/>
+  		<span id = "range">120</span>
+  		<button onclick = "start()">Start</button>
+  		<button onclick = "stop()">Stop</button>
+  	</body>
+</html>
