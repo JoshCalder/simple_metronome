@@ -2,8 +2,8 @@ console.log("starting");
 var BPM = Tone.Transport.bpm;
 var playing = false;
 var colours = ["red","orange","green","blue"];
-var borderChange = ["10px","20px","30px","40px"];
-var paddingChange = ["80px", "70px", "60px", "50px"];
+var borderChange = ["10px","15px","20px","25px"];
+var paddingChange = ["80px", "75px", "70px", "65px"];
 var i = 0;
 BPM.value = 120;
 
