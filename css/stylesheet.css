@@ -9,13 +9,19 @@ body {
 
 #metronome {
 	display: inline-block;
-	border: 5px solid red;
-	padding: 30px 50px 30px 50px;
+	border: 10px solid red;
+	/*padding: 30px 50px 30px 50px;*/
+	padding: 80px;
 }
 
 #buttons {
 	margin: 25px 0 0 0;
 	display: block;
+}
+
+#range {
+	display: block;
+	margin: 20px 0 0 0;
 }
 
 button {
@@ -34,7 +40,7 @@ button:hover {
 input[type='range'] {
     -webkit-appearance: none !important;
     background:black;
-    height:7px;
+    height:5px;
     outline: 0;
     width: 200px;
 }

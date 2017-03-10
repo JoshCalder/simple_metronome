@@ -1,7 +1,9 @@
 console.log("starting");
 var BPM = Tone.Transport.bpm;
 var playing = false;
-var colours = ["red","blue","green","orange"];
+var colours = ["red","orange","green","blue"];
+var borderChange = ["10px","20px","30px","40px"];
+var paddingChange = ["80px", "70px", "60px", "50px"];
 var i = 0;
 BPM.value = 120;
 
@@ -11,6 +13,8 @@ var loop = new Tone.Sequence(function(time){
 			console.log("entered loop");
 			player.start(time);
 			document.getElementById("metronome").style.borderColor = colours[i%4];
+			document.getElementById("metronome").style.padding = paddingChange[i%4];
+			document.getElementById("metronome").style.borderWidth = borderChange[i%4];
 			i++;	
 		}, "4n");
 Tone.Transport.start();
@@ -30,5 +34,5 @@ function changeState() {
 // changes the BPM via the HTML range slider input and updates range val
 function displayBPM(newBPM) {
 	BPM.value = newBPM;
-	document.getElementById("range").innerHTML = newBPM;
+	document.getElementById("range").innerHTML = newBPM + " bpm";
 }
