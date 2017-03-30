@@ -5,13 +5,21 @@ var colours = ["red","orange","green","blue"];
 var borderChange = ["10px","15px","20px","25px"];
 var paddingChange = ["80px", "75px", "70px", "65px"];
 var i = 0;
-BPM.value = 120;
+BPM.value = 120; //default
 
+var synth = new Tone.Synth({
+	"oscillator" : { 
+		"type": "sine"
+	},
+}).toMaster();
 
-var player = new Tone.Player("./audio/woodblock.wav").toMaster();
 var loop = new Tone.Sequence(function(time){
 			console.log("entered loop");
-			player.start(time);
+			if (i%4 == 0) {
+				synth.triggerAttackRelease("E4", "16n");
+			} else {
+				synth.triggerAttackRelease("A3", "16n");
+			}
 			document.getElementById("metronome").style.borderColor = colours[i%4];
 			document.getElementById("metronome").style.padding = paddingChange[i%4];
 			document.getElementById("metronome").style.borderWidth = borderChange[i%4];
